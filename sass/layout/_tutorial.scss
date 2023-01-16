@@ -1,0 +1,125 @@
+/********************************** MOBILE/TABLETTE TUTORIAL **********************************/
+
+@media screen and (max-width: 992px) {
+
+	.tutorial {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-top: 55px;
+        &__title {
+            padding-bottom: 20px;
+            margin: 0px;
+        }
+        &__steps {
+            display: flex;
+            flex-direction: column;
+            counter-reset: tutostep;
+            padding: 0px;
+            margin: 0px;
+            &--step {
+                display: flex;
+                padding: 25px 15px 25px 25px;
+                border-radius: 25px;
+                margin: 20px 0px 20px 0px;
+                margin-left: 10px;
+                @include box-shadow;
+                background-color: $color-background;
+                @include size-icon;
+                font-weight: bolder;
+                &:before {
+                    counter-increment: tutostep 1;
+                    content: counter(tutostep);
+                    background: $color-primary;
+                    height: 24px;
+                    width: 24px;
+                    border-radius: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    position: absolute;
+                    left: 5%;
+                    font-size: 14px;
+                }
+                &-icon {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 2px;
+                    width: 30px;
+                    text-align: center;
+                    position: relative;
+                    @include size-icon;
+                    padding: 0px 15px 0px 5px;
+                    color: $color-icon-tuto;
+                }
+                &-title {
+                    margin: 0px;
+                }
+                &:hover {
+                    background-color: $color-background-button-hover;
+                    & i {
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+	}
+}
+
+/********************************** DESKTOP TUTORIAL **********************************/
+
+@media screen and (min-width: 993px) {
+
+	.tutorial {
+		display: flex;
+		justify-content: center;
+        &__title {
+            display: none;
+        }
+        &__steps {
+            display: flex;
+            counter-reset: tutostep;
+            &--step {
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                padding: 40px;
+                position: relative;
+                &:before {
+                    counter-increment: tutostep 1;
+                    content: counter(tutostep);
+                    background: $color-tertiary;
+                    @include box-shadow;
+                    height: 24px;
+                    width: 24px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    position: absolute;
+                    left: 1%;
+                    top: 24%;
+                }
+                &-title {
+                    padding-bottom: 10px;
+                }
+                &-icon {
+                    display: flex;
+                    align-items: center;
+                    font-size: 25px;
+                    background: linear-gradient($color-primary, $color-secondary);
+                    height: 45px;
+                    width: 45px;
+                    justify-content: center;
+                    border-radius: 50px;
+                    color: $color-background;
+                }
+            }
+        }
+	}
+}
+
+.fas.fa-mobile-screen-button, .fas.fa-list-ul, .fas.fa-store {
+    display: flex;
+}

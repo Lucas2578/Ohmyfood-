@@ -1,0 +1,26 @@
+/********************************** MOBILE/TABLETTE/DESKTOP HEADER **********************************/
+
+.header {
+	display: flex;
+	flex-direction: column;
+    padding-bottom: 50px;
+    &__title {
+        text-align: center;
+        padding: 20px 10px 5px 10px;
+        margin: 0;
+        box-shadow: 0 0 0.5rem rgb(0 0 0 / 25%);
+        position: relative;
+        &--logo {
+            width: 160px;
+            height: 28px;
+        }
+    }
+}
+
+/********************************** DESKTOP HEADER **********************************/
+
+@media screen and (min-width: 993px) {
+    .header {
+        padding-bottom: 0px;
+    }
+}

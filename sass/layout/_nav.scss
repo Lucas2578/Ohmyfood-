@@ -1,0 +1,56 @@
+/********************************** MOBILE NAVIGATION **********************************/
+
+.nav {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    &__location {
+        display: flex;
+        background-color: $color-background-nav;
+        padding: 15px 0px 15px 0px;
+        color: $color-icon-nav;
+        justify-content: center;
+        width: 100%;
+        &--town {
+            margin: 0;
+            text-align: center;
+            font-size: 16px;
+            margin-right: 25px;
+            font-weight: bolder;
+        }
+        &--icon {
+            position: relative;
+            margin-right: 15px;
+            @include size-icon
+        }
+    }
+    &__exploration {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        background-color: $color-background;
+        padding-bottom: 60px;
+        &--title {
+            margin: 0;
+            padding: 45px 0px 5px 0px;
+            width: 75%;
+        }
+        &--desc {
+            margin: 0;
+            padding: 5px 0px 35px 0px;
+            width: 75%;
+        }
+        &--button {
+            border-radius: 50px;
+            padding: 15px;
+            color: white;
+            background: linear-gradient($color-secondary, $color-primary);
+            border: 1px;
+            font-size: 16px;
+            font-family: Roboto;
+            @include box-shadow
+        }
+    }
+}
