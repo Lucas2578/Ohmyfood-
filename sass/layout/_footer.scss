@@ -1,0 +1,29 @@
+.footer {
+    width: 100%;
+    background-color: $color-background-footer;
+    padding-bottom: 40px;
+    &__title {
+        font-family: Shrikhand;
+        color: white;
+        padding: 25px 0px 25px 0px;
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        gap: 8px;
+        &--element {
+            display: flex;
+            &-icon {
+                width: 16px;
+                height: 16px;
+                font-size: 16px;
+                padding-right: 14px;
+            }
+            &-link {
+                font-size: 20px;
+                width: auto;
+            }
+        }
+    }
+}
