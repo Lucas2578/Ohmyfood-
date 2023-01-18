@@ -1,0 +1,81 @@
+.menu {
+    margin-top: -55px;
+    border-radius: 35px 35px 0px 0px;
+    background-color: $color-background;
+    z-index: 1;
+    position: relative;
+
+    &__title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 35px 20px 30px 0px;
+        font-family: Shrikhand;
+    }
+
+    &__category, &__category--2 {
+        font-weight: lighter;
+        padding-bottom: 5px;
+        position: relative;
+        width: 60%;
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            width: 45px;
+            border-bottom: $color-tertiary 3px solid;
+        }
+        &--2 {
+            margin-left: 35px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 40px;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &--element {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            background-color: white;
+            padding: 10px;
+            @include box-shadow;
+            border-radius: 15px;
+
+            &-desc {
+                font-size: 14px;
+                padding: 5px 0px 0px 0px;
+            }
+
+            &-price {
+                font-weight: bolder;
+                font-size: 15px
+            }
+        }
+    }
+
+    &__btn {
+
+        display: flex;
+        justify-content: center;
+
+        &--command {
+            justify-content: center;
+            @include btn-explore_command;
+            padding: 15px 50px 15px 50px;
+
+        }
+    }
+}

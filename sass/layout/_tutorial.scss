@@ -100,8 +100,15 @@
 
             &:hover {
                 background-color: $color-background-button-hover;
+                @media screen and (min-width: 993px) {
+                    background-color: unset;
+                }
+
                 & i {
                     color: $color-primary;
+                    @media screen and (min-width: 993px) {
+                        color: white;
+                    }
                 }
 
             }

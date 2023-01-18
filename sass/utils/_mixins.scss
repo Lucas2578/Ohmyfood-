@@ -21,3 +21,18 @@
         }
     }
 }
+
+@mixin btn-explore_command {
+    border-radius: 50px;
+    padding: 15px;
+    color: white;
+    background: linear-gradient($color-secondary, $color-primary);
+    background-color: #686868;
+    font-size: 16px;
+    @include box-shadow;
+    transition: 0.5s;
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+}
