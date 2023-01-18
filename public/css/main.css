@@ -474,7 +474,6 @@ a {
   padding-right: 14px;
 }
 .footer__list--element-link {
-  font-size: 20px;
   width: auto;
 }
 
@@ -530,18 +529,75 @@ a {
   padding: 10px;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-animation-name: itemAppear;
+          animation-name: itemAppear;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
+          animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.menu__card--element-food {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .menu__card--element-desc {
   font-size: 14px;
   padding: 5px 0px 0px 0px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .menu__card--element-price {
   font-weight: bolder;
   font-size: 15px;
+  flex: 1;
+  text-align: right;
+  padding-right: 10px;
+}
+.menu__card--element-confirm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  margin: -18px -76.1px -11px 0px;
+  padding: 20px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: all ease-in-out 0.4s;
+}
+.menu__card--element-confirm-item {
+  color: #99E2D0;
+  background-color: white;
+  border-radius: 50px;
+  width: 25px;
+  height: 25px;
+}
+.menu__card--element-confirm-item:before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+}
+.menu__card--element:hover .menu__card--element-confirm {
+  margin-right: -10.1px;
+  transition: all ease-in-out 0.4s;
+}
+.menu__card--element:hover .menu__card--element-confirm-item {
+  transform: rotate(360deg);
+  transition: all ease-in-out 0.6s;
 }
 .menu__btn {
   display: flex;
   justify-content: center;
+  padding-bottom: 40px;
 }
 .menu__btn--command {
   justify-content: center;
@@ -557,4 +613,30 @@ a {
 }
 .menu__btn--command:hover {
   transform: scale(1.05);
+}
+.menu__delay-2 {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+.menu__delay-3 {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+@-webkit-keyframes itemAppear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes itemAppear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }/*# sourceMappingURL=main.css.map */
