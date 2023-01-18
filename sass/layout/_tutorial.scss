@@ -1,123 +1,115 @@
 /********************************** MOBILE/TABLETTE TUTORIAL **********************************/
+.tutorial {
+    padding: 55px 0px 65px 0px;
+    @media screen and (min-width: 992px) {
+        display: flex;
+        flex-direction: row;
+        padding: unset
+    }
 
-@media screen and (max-width: 992px) {
-
-	.tutorial {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding: 55px 0px 65px 0px;
-        &__title {
-            padding-bottom: 20px;
-            margin: 0px;
-        }
-        &__steps {
-            display: flex;
-            flex-direction: column;
-            counter-reset: tutostep;
-            padding: 0px;
-            margin: 0px;
-            gap: 25px;
-            &--step {
-                display: flex;
-                padding: 25px 15px 25px 25px;
-                border-radius: 25px;
-                margin-left: 10px;
-                @include box-shadow;
-                background-color: $color-background;
-                @include size-icon;
-                font-weight: bolder;
-                &:before {
-                    counter-increment: tutostep 1;
-                    content: counter(tutostep);
-                    background: $color-primary;
-                    height: 24px;
-                    width: 24px;
-                    border-radius: 50px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    color: white;
-                    position: absolute;
-                    left: 5%;
-                    font-size: 14px;
-                }
-                &-icon {
-                    display: flex;
-                    justify-content: center;
-                    margin-top: 2px;
-                    width: 30px;
-                    text-align: center;
-                    position: relative;
-                    @include size-icon;
-                    padding: 0px 15px 0px 5px;
-                    color: $color-icon-tuto;
-                }
-                &-title {
-                    margin: 0px;
-                }
-                &:hover {
-                    background-color: $color-background-button-hover;
-                    & i {
-                        color: $color-primary;
-                    }
-                }
-            }
-        }
-	}
-}
-
-/********************************** DESKTOP TUTORIAL **********************************/
-
-@media screen and (min-width: 993px) {
-
-	.tutorial {
-		display: flex;
-		justify-content: center;
-        &__title {
+    &__title {
+        padding-bottom: 20px;
+        margin: 0px;
+        @media screen and (min-width: 992px) {
             display: none;
         }
-        &__steps {
+    }
+
+    &__steps {
+        display: flex;
+        flex-direction: column;
+        counter-reset: tutostep;
+        padding: 0px;
+        margin: 0px;
+        gap: 25px;
+        @media screen and (min-width: 992px) {
+            flex-direction: row;
+        }
+
+        &--step {
             display: flex;
-            counter-reset: tutostep;
-            &--step {
-                display: flex;
-                flex-direction: column-reverse;
-                align-items: center;
+            padding: 25px 15px 25px 25px;
+            border-radius: 25px;
+            margin-left: 10px;
+            @include box-shadow;
+            @include size-icon;
+            font-weight: bolder;
+            @media screen and (min-width: 992px) {
                 padding: 40px;
                 position: relative;
-                &:before {
-                    counter-increment: tutostep 1;
-                    content: counter(tutostep);
+                flex-direction: column-reverse;
+                align-items: center;
+                box-shadow: unset;
+                border-radius: 0px;
+            }
+
+            &:before {
+                counter-increment: tutostep 1;
+                content: counter(tutostep);
+                background: $color-primary;
+                height: 24px;
+                width: 24px;
+                border-radius: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                position: absolute;
+                left: 5%;
+                font-size: 14px;
+                @media screen and (min-width: 992px) {
                     background: $color-tertiary;
                     @include box-shadow;
-                    height: 24px;
-                    width: 24px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    color: white;
-                    position: absolute;
                     left: 1%;
                     top: 24%;
+                    border-radius: 0px;
                 }
-                &-title {
-                    padding-bottom: 10px;
-                }
-                &-icon {
-                    display: flex;
+
+            }
+
+            &-icon {
+                display: flex;
+                justify-content: center;
+                margin-top: 2px;
+                width: 30px;
+                text-align: center;
+                position: relative;
+                @include size-icon;
+                padding: 0px 15px 0px 5px;
+                color: $color-icon-tuto;
+                @media screen and (min-width: 992px) {
                     align-items: center;
                     font-size: 25px;
                     background: linear-gradient($color-primary, $color-secondary);
                     height: 45px;
                     width: 45px;
-                    justify-content: center;
                     border-radius: 50px;
                     color: $color-background;
+                    padding: 0px;
                 }
+
             }
+
+            &-title {
+                margin: 0px;
+                @media screen and (min-width: 992px) {
+                    padding-bottom: 10px;
+                }
+
+            }
+
+            &:hover {
+                background-color: $color-background-button-hover;
+                & i {
+                    color: $color-primary;
+                }
+
+            }
+
         }
-	}
+
+    }
+
 }
 
 .fas.fa-mobile-screen-button, .fas.fa-list-ul, .fas.fa-store {

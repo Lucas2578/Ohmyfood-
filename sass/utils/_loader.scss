@@ -1,0 +1,96 @@
+.loading {
+	display: flex;
+	position: fixed;
+	gap: 30px;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	animation: loader 0.05s;
+	animation-delay: 3s;
+	animation-fill-mode: both;
+	z-index: 10000;
+    background-color: rgba(255, 255, 255, .9);
+
+    &__cooking {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        &--circle {
+            display: flex;
+            width: 100%;
+
+            &-1, &-2, &-3 {
+                width: 5px;
+                height: 5px;
+                padding: 10px;
+                background-color: lightgray;
+                opacity: 100%;
+                border-radius: 50px;
+                position: absolute;
+                animation: bounce infinite 1s alternate;
+                border: black 1px solid;
+            }
+
+            &-1 {
+                border-right: black 1px solid;
+            }
+
+            &-2 {
+                left: 12px;
+                bottom: 25px;
+                border-left: lightgray 1px solid;
+                border-right: lightgray 1px solid;
+                border-bottom: lightgray 1px solid;
+                z-index: 1;
+            }
+
+            &-3 {
+                left: 24px;
+                border-left: lightgray 1px solid;
+            }
+        }
+
+        &--square {
+            width: 5px;
+            height: 5px;
+            padding: 10px;
+            background-color: lightgray;
+            margin-top: 23px;
+            margin-left: 11.75px;
+            border: black 1px solid;
+            border-top: none;
+            z-index: 1;
+            animation: bounce infinite 1s alternate;
+        }
+
+        &--delay1 {
+            animation-delay: 0.2s;
+        }
+        
+        &--delay2 {
+            animation-delay: 0.4s;
+        }
+    }
+}
+
+@keyframes bounce {
+	100%{
+		transform: translateY(-30px);
+	}
+}
+
+@keyframes scaling {
+	100%{
+		transform: scale(1.2);
+	}
+}
+
+@keyframes loader {
+	100% {
+	  opacity: 0;
+	  z-index: -10;
+	}
+}

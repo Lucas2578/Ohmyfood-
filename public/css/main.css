@@ -1,41 +1,142 @@
-/********************************** COLORS **********************************/ /********************************** SIZE ICON **********************************/
-/********************************** SHADOW BOX **********************************/
-/********************************** BUTTON LIKE **********************************/
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+.loading {
+  display: flex;
+  position: fixed;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  -webkit-animation: loader 0.05s;
+          animation: loader 0.05s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  z-index: 10000;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.loading__cooking {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.loading__cooking--circle {
+  display: flex;
+  width: 100%;
+}
+.loading__cooking--circle-1, .loading__cooking--circle-2, .loading__cooking--circle-3 {
+  width: 5px;
+  height: 5px;
+  padding: 10px;
+  background-color: lightgray;
+  opacity: 100%;
+  border-radius: 50px;
+  position: absolute;
+  -webkit-animation: bounce infinite 1s alternate;
+          animation: bounce infinite 1s alternate;
+  border: black 1px solid;
+}
+.loading__cooking--circle-1 {
+  border-right: black 1px solid;
+}
+.loading__cooking--circle-2 {
+  left: 12px;
+  bottom: 25px;
+  border-left: lightgray 1px solid;
+  border-right: lightgray 1px solid;
+  border-bottom: lightgray 1px solid;
+  z-index: 1;
+}
+.loading__cooking--circle-3 {
+  left: 24px;
+  border-left: lightgray 1px solid;
+}
+.loading__cooking--square {
+  width: 5px;
+  height: 5px;
+  padding: 10px;
+  background-color: lightgray;
+  margin-top: 23px;
+  margin-left: 11.75px;
+  border: black 1px solid;
+  border-top: none;
+  z-index: 1;
+  -webkit-animation: bounce infinite 1s alternate;
+          animation: bounce infinite 1s alternate;
+}
+.loading__cooking--delay1 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.loading__cooking--delay2 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+@-webkit-keyframes bounce {
+  100% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes bounce {
+  100% {
+    transform: translateY(-30px);
+  }
+}
+@-webkit-keyframes scaling {
+  100% {
+    transform: scale(1.2);
+  }
+}
+@keyframes scaling {
+  100% {
+    transform: scale(1.2);
+  }
+}
+@-webkit-keyframes loader {
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+@keyframes loader {
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
 ul, ol {
   list-style: none;
   padding: 0px;
   margin: 0px;
 }
 
-/********************************** FONTS **********************************/
-/********************************** OTHERS **********************************/
 body {
-  margin: 0;
+  margin: 0px;
   font-family: Roboto, sans-serif;
+}
+
+h1, h2, h3, p {
+  padding: 0px;
+  margin: 0px;
 }
 
 h1 {
   font-size: unset;
-  padding: 0px;
-  margin: 0px;
 }
 
 h2 {
   font-size: 24px;
-  padding: 0px;
-  margin: 0px;
 }
 
 h3 {
   font-size: 18px;
-  padding: 0px;
-  margin: 0px;
 }
 
 p {
-  padding: 0px;
-  margin: 0px;
   font-size: 16px;
 }
 
@@ -45,15 +146,25 @@ a {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1280px;
+  margin: auto;
   padding: 0% 5% 0% 5%;
 }
+@media screen and (max-width: 992px) {
+  .container .container {
+    margin: unset;
+  }
+}
 
-/********************************** MOBILE/TABLETTE/DESKTOP HEADER **********************************/
 .header {
   display: flex;
   flex-direction: column;
   padding-bottom: 50px;
+}
+@media screen and (min-width: 993px) {
+  .header {
+    padding-bottom: 0px;
+  }
 }
 .header__title {
   text-align: center;
@@ -67,13 +178,6 @@ a {
   height: 28px;
 }
 
-/********************************** DESKTOP HEADER **********************************/
-@media screen and (min-width: 993px) {
-  .header {
-    padding-bottom: 0px;
-  }
-}
-/********************************** MOBILE NAVIGATION **********************************/
 .nav {
   display: flex;
   flex-direction: column;
@@ -123,267 +227,205 @@ a {
   padding: 15px;
   color: white;
   background: linear-gradient(#FF79DA, #9356DC);
+  background-color: #686868;
   border: 1px;
   font-size: 16px;
   font-family: Roboto;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+.nav__exploration--button:hover {
+  transform: scale(1.05);
 }
 
 /********************************** MOBILE/TABLETTE TUTORIAL **********************************/
-@media screen and (max-width: 992px) {
+.tutorial {
+  padding: 55px 0px 65px 0px;
+}
+@media screen and (min-width: 992px) {
   .tutorial {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 55px 0px 65px 0px;
-  }
-  .tutorial__title {
-    padding-bottom: 20px;
-    margin: 0px;
-  }
-  .tutorial__steps {
-    display: flex;
-    flex-direction: column;
-    counter-reset: tutostep;
-    padding: 0px;
-    margin: 0px;
-    gap: 25px;
-  }
-  .tutorial__steps--step {
-    display: flex;
-    padding: 25px 15px 25px 25px;
-    border-radius: 25px;
-    margin-left: 10px;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-    background-color: #F7F7F7;
-    font-size: 18px;
-    font-weight: bolder;
-  }
-  .tutorial__steps--step:before {
-    counter-increment: tutostep 1;
-    content: counter(tutostep);
-    background: #9356DC;
-    height: 24px;
-    width: 24px;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: absolute;
-    left: 5%;
-    font-size: 14px;
-  }
-  .tutorial__steps--step-icon {
-    display: flex;
-    justify-content: center;
-    margin-top: 2px;
-    width: 30px;
-    text-align: center;
-    position: relative;
-    font-size: 18px;
-    padding: 0px 15px 0px 5px;
-    color: #7E7E7E;
-  }
-  .tutorial__steps--step-title {
-    margin: 0px;
-  }
-  .tutorial__steps--step:hover {
-    background-color: #F5EDFF;
-  }
-  .tutorial__steps--step:hover i {
-    color: #9356DC;
+    flex-direction: row;
+    padding: unset;
   }
 }
-/********************************** DESKTOP TUTORIAL **********************************/
-@media screen and (min-width: 993px) {
-  .tutorial {
-    display: flex;
-    justify-content: center;
-  }
+.tutorial__title {
+  padding-bottom: 20px;
+  margin: 0px;
+}
+@media screen and (min-width: 992px) {
   .tutorial__title {
     display: none;
   }
+}
+.tutorial__steps {
+  display: flex;
+  flex-direction: column;
+  counter-reset: tutostep;
+  padding: 0px;
+  margin: 0px;
+  gap: 25px;
+}
+@media screen and (min-width: 992px) {
   .tutorial__steps {
-    display: flex;
-    counter-reset: tutostep;
+    flex-direction: row;
   }
+}
+.tutorial__steps--step {
+  display: flex;
+  padding: 25px 15px 25px 25px;
+  border-radius: 25px;
+  margin-left: 10px;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  font-weight: bolder;
+}
+@media screen and (min-width: 992px) {
   .tutorial__steps--step {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
     padding: 40px;
     position: relative;
+    flex-direction: column-reverse;
+    align-items: center;
+    box-shadow: unset;
+    border-radius: 0px;
   }
+}
+.tutorial__steps--step:before {
+  counter-increment: tutostep 1;
+  content: counter(tutostep);
+  background: #9356DC;
+  height: 24px;
+  width: 24px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+  left: 5%;
+  font-size: 14px;
+}
+@media screen and (min-width: 992px) {
   .tutorial__steps--step:before {
-    counter-increment: tutostep 1;
-    content: counter(tutostep);
     background: #99E2D0;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-    height: 24px;
-    width: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: absolute;
     left: 1%;
     top: 24%;
+    border-radius: 0px;
   }
-  .tutorial__steps--step-title {
-    padding-bottom: 10px;
-  }
+}
+.tutorial__steps--step-icon {
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
+  width: 30px;
+  text-align: center;
+  position: relative;
+  font-size: 18px;
+  padding: 0px 15px 0px 5px;
+  color: #7E7E7E;
+}
+@media screen and (min-width: 992px) {
   .tutorial__steps--step-icon {
-    display: flex;
     align-items: center;
     font-size: 25px;
     background: linear-gradient(#9356DC, #FF79DA);
     height: 45px;
     width: 45px;
-    justify-content: center;
     border-radius: 50px;
     color: #F7F7F7;
+    padding: 0px;
   }
 }
+.tutorial__steps--step-title {
+  margin: 0px;
+}
+@media screen and (min-width: 992px) {
+  .tutorial__steps--step-title {
+    padding-bottom: 10px;
+  }
+}
+.tutorial__steps--step:hover {
+  background-color: #F5EDFF;
+}
+.tutorial__steps--step:hover i {
+  color: #9356DC;
+}
+
 .fas.fa-mobile-screen-button, .fas.fa-list-ul, .fas.fa-store {
   display: flex;
 }
 
-/********************************** MOBILE RESTAURANT **********************************/
-@media screen and (max-width: 992px) {
-  .restaurants {
-    background-color: #F7F7F7;
-    padding: 60px 0px 65px 0px;
-  }
-  .restaurants__title {
-    padding-bottom: 30px;
-  }
-  .restaurants__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    width: 100%;
-  }
-  .restaurants__list--card {
-    display: flex;
-    min-width: 50%;
-    flex: 1;
-    height: 252px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-    position: relative;
-  }
-  .restaurants__list--card-badge {
-    padding: 7px 10px 7px 10px;
-    position: absolute;
-    background-color: #99E2D0;
-    color: #008766;
-    border-radius: 3px;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-    right: 15px;
-    top: 15px;
-    font-weight: bolder;
-    font-size: 15px;
-  }
-  .restaurants__list--card-img {
-    width: 100%;
-    height: 175px;
-    -o-object-fit: cover;
-       object-fit: cover;
-    border-radius: 15px 15px 0px 0px;
-  }
-  .restaurants__list--card-desc {
-    display: flex;
-    padding: 12px 23px 12px 16px;
-    justify-content: space-between;
-  }
-  .restaurants__list--card-desc-element-title {
-    padding-bottom: 4px;
-  }
-  .restaurants__list--card-desc-like-icon {
-    font-size: 24px;
-  }
-  .restaurants__list--card-desc-like-icon:hover {
-    background: linear-gradient(to bottom left, #9356DC, #FF79DA);
-    -webkit-background-clip: text;
-            background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transform: scale(1.2);
-    transition: 0.2s;
-  }
-  .restaurants__list--card-desc-like-icon:hover::before {
-    font-weight: 900;
-  }
+.restaurants {
+  background-color: #F7F7F7;
+  padding: 60px 0px 65px 0px;
+}
+.restaurants__title {
+  padding-bottom: 30px;
+}
+.restaurants__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+}
+.restaurants__list--card {
+  display: flex;
+  min-width: 50%;
+  flex: 1;
+  height: 252px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.restaurants__list--card-badge {
+  padding: 7px 10px 7px 10px;
+  position: absolute;
+  background-color: #99E2D0;
+  color: #008766;
+  border-radius: 3px;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  right: 15px;
+  top: 15px;
+  font-weight: bolder;
+  font-size: 15px;
+}
+.restaurants__list--card-img {
+  width: 100%;
+  height: 175px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px 15px 0px 0px;
+}
+.restaurants__list--card-desc {
+  display: flex;
+  padding: 12px 23px 12px 16px;
+  justify-content: space-between;
+}
+.restaurants__list--card-desc-element-title {
+  padding-bottom: 4px;
+}
+.restaurants__list--card-desc-like-icon {
+  font-size: 24px;
+}
+.restaurants__list--card-desc-like-icon:hover {
+  background: linear-gradient(to bottom left, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.2);
+  transition: 0.2s;
+}
+.restaurants__list--card-desc-like-icon:hover::before {
+  font-weight: 900;
 }
 @media screen and (min-width: 992px) {
-  .restaurants {
-    display: flex;
-    justify-content: center;
-    background-color: #F7F7F7;
-    padding: 60px 0px 65px 0px;
-  }
-  .restaurants__title {
-    padding-bottom: 30px;
-  }
-  .restaurants__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    width: 100%;
-  }
   .restaurants__list--card {
-    display: flex;
     min-width: 33%;
-    flex: 1;
-    height: 252px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-    position: relative;
-  }
-  .restaurants__list--card-badge {
-    padding: 7px 10px 7px 10px;
-    position: absolute;
-    background-color: #99E2D0;
-    color: #008766;
-    border-radius: 3px;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-    right: 15px;
-    top: 15px;
-    font-weight: bolder;
-    font-size: 15px;
-  }
-  .restaurants__list--card-img {
-    width: 100%;
-    height: 175px;
-    -o-object-fit: cover;
-       object-fit: cover;
-    border-radius: 15px 15px 0px 0px;
-  }
-  .restaurants__list--card-desc {
-    display: flex;
-    padding: 12px 23px 12px 16px;
-    justify-content: space-between;
-  }
-  .restaurants__list--card-desc-element-title {
-    padding-bottom: 4px;
-  }
-  .restaurants__list--card-desc-like-icon {
-    font-size: 24px;
-  }
-  .restaurants__list--card-desc-like-icon:hover {
-    background: linear-gradient(to bottom left, #9356DC, #FF79DA);
-    -webkit-background-clip: text;
-            background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transform: scale(1.2);
-    transition: 0.2s;
-  }
-  .restaurants__list--card-desc-like-icon:hover::before {
-    font-weight: 900;
   }
 }
+
 .restaurants__list--card a {
   width: 100%;
 }
@@ -416,363 +458,4 @@ a {
 .footer__list--element-link {
   font-size: 20px;
   width: auto;
-}
-
-#cooking {
-  position: fixed;
-  margin: 0 auto;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  -webkit-animation: loader 0.05s;
-          animation: loader 0.05s;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  z-index: 10000;
-  background-color: white;
-}
-
-#cooking #area {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 50%;
-  height: 50%;
-  background-color: transparent;
-  transform-origin: 15% 60%;
-  -webkit-animation: flip 2.1s ease-in-out infinite;
-          animation: flip 2.1s ease-in-out infinite;
-}
-
-#cooking #area #sides {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform-origin: 15% 60%;
-  -webkit-animation: switchSide 2.1s ease-in-out infinite;
-          animation: switchSide 2.1s ease-in-out infinite;
-}
-
-#cooking #area #sides #handle {
-  position: absolute;
-  bottom: 18%;
-  right: 80%;
-  width: 35%;
-  height: 20%;
-  background-color: transparent;
-  border-top: 1vh solid #333;
-  border-left: 1vh solid transparent;
-  border-radius: 100%;
-  transform: rotate(20deg) rotateX(0deg) scale(1.3, 0.9);
-}
-
-#cooking #area #sides #pan {
-  position: absolute;
-  bottom: 20%;
-  right: 30%;
-  width: 50%;
-  height: 8%;
-  background-color: #333;
-  border-radius: 0 0 1.4em 1.4em;
-  transform-origin: -15% 0;
-}
-
-#cooking #area #pancake {
-  position: absolute;
-  top: 24%;
-  width: 100%;
-  height: 100%;
-  transform: rotateX(85deg);
-  -webkit-animation: jump 2.1s ease-in-out infinite;
-          animation: jump 2.1s ease-in-out infinite;
-}
-
-#cooking #area #pancake #pastry {
-  position: absolute;
-  bottom: 26%;
-  right: 37%;
-  width: 40%;
-  height: 45%;
-  background-color: #333;
-  box-shadow: 0 0 3px 0 #333;
-  border-radius: 100%;
-  transform-origin: -20% 0;
-  -webkit-animation: fly 2.1s ease-in-out infinite;
-          animation: fly 2.1s ease-in-out infinite;
-}
-
-#cooking .bubble {
-  position: absolute;
-  border-radius: 100%;
-  box-shadow: 0 0 0.25vh #4d4d4d;
-  opacity: 0;
-}
-
-#cooking .bubble:nth-child(1) {
-  margin-top: 2.5vh;
-  left: 58%;
-  width: 2.5vh;
-  height: 2.5vh;
-  background-color: #454545;
-  -webkit-animation: bubble 2s cubic-bezier(0.53, 0.16, 0.39, 0.96) infinite;
-          animation: bubble 2s cubic-bezier(0.53, 0.16, 0.39, 0.96) infinite;
-}
-
-#cooking .bubble:nth-child(2) {
-  margin-top: 3vh;
-  left: 52%;
-  width: 2vh;
-  height: 2vh;
-  background-color: #3d3d3d;
-  -webkit-animation: bubble 2s ease-in-out 0.35s infinite;
-          animation: bubble 2s ease-in-out 0.35s infinite;
-}
-
-#cooking .bubble:nth-child(3) {
-  margin-top: 1.8vh;
-  left: 50%;
-  width: 1.5vh;
-  height: 1.5vh;
-  background-color: #333;
-  -webkit-animation: bubble 1.5s cubic-bezier(0.53, 0.16, 0.39, 0.96) 0.55s infinite;
-          animation: bubble 1.5s cubic-bezier(0.53, 0.16, 0.39, 0.96) 0.55s infinite;
-}
-
-#cooking .bubble:nth-child(4) {
-  margin-top: 2.7vh;
-  left: 56%;
-  width: 1.2vh;
-  height: 1.2vh;
-  background-color: #2b2b2b;
-  -webkit-animation: bubble 1.8s cubic-bezier(0.53, 0.16, 0.39, 0.96) 0.55s infinite;
-          animation: bubble 1.8s cubic-bezier(0.53, 0.16, 0.39, 0.96) 0.55s infinite;
-}
-
-#cooking .bubble:nth-child(5) {
-  margin-top: 2.7vh;
-  left: 63%;
-  width: 1.1vh;
-  height: 1.1vh;
-  background-color: #242424;
-  -webkit-animation: bubble 1.6s ease-in-out 1s infinite;
-          animation: bubble 1.6s ease-in-out 1s infinite;
-}
-
-@-webkit-keyframes pulse {
-  0% {
-    transform: scale(1, 1);
-    opacity: 0.25;
-  }
-  50% {
-    transform: scale(1.2, 1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1, 1);
-    opacity: 0.25;
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1, 1);
-    opacity: 0.25;
-  }
-  50% {
-    transform: scale(1.2, 1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1, 1);
-    opacity: 0.25;
-  }
-}
-@-webkit-keyframes flip {
-  0% {
-    transform: rotate(0deg);
-  }
-  5% {
-    transform: rotate(-27deg);
-  }
-  30%, 50% {
-    transform: rotate(0deg);
-  }
-  55% {
-    transform: rotate(27deg);
-  }
-  83.3% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-@keyframes flip {
-  0% {
-    transform: rotate(0deg);
-  }
-  5% {
-    transform: rotate(-27deg);
-  }
-  30%, 50% {
-    transform: rotate(0deg);
-  }
-  55% {
-    transform: rotate(27deg);
-  }
-  83.3% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-@-webkit-keyframes switchSide {
-  0% {
-    transform: rotateY(0deg);
-  }
-  50% {
-    transform: rotateY(180deg);
-  }
-  100% {
-    transform: rotateY(0deg);
-  }
-}
-@keyframes switchSide {
-  0% {
-    transform: rotateY(0deg);
-  }
-  50% {
-    transform: rotateY(180deg);
-  }
-  100% {
-    transform: rotateY(0deg);
-  }
-}
-@-webkit-keyframes jump {
-  0% {
-    top: 24;
-    transform: rotateX(85deg);
-  }
-  25% {
-    top: 10%;
-    transform: rotateX(0deg);
-  }
-  50% {
-    top: 30%;
-    transform: rotateX(85deg);
-  }
-  75% {
-    transform: rotateX(0deg);
-  }
-  100% {
-    transform: rotateX(85deg);
-  }
-}
-@keyframes jump {
-  0% {
-    top: 24;
-    transform: rotateX(85deg);
-  }
-  25% {
-    top: 10%;
-    transform: rotateX(0deg);
-  }
-  50% {
-    top: 30%;
-    transform: rotateX(85deg);
-  }
-  75% {
-    transform: rotateX(0deg);
-  }
-  100% {
-    transform: rotateX(85deg);
-  }
-}
-@-webkit-keyframes fly {
-  0% {
-    bottom: 26%;
-    transform: rotate(0deg);
-  }
-  10% {
-    bottom: 40%;
-  }
-  50% {
-    bottom: 26%;
-    transform: rotate(-190deg);
-  }
-  80% {
-    bottom: 40%;
-  }
-  100% {
-    bottom: 26%;
-    transform: rotate(0deg);
-  }
-}
-@keyframes fly {
-  0% {
-    bottom: 26%;
-    transform: rotate(0deg);
-  }
-  10% {
-    bottom: 40%;
-  }
-  50% {
-    bottom: 26%;
-    transform: rotate(-190deg);
-  }
-  80% {
-    bottom: 40%;
-  }
-  100% {
-    bottom: 26%;
-    transform: rotate(0deg);
-  }
-}
-@-webkit-keyframes bubble {
-  0% {
-    transform: scale(0.15, 0.15);
-    top: 80%;
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.1, 1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.33, 0.33);
-    top: 60%;
-    opacity: 0;
-  }
-}
-@keyframes bubble {
-  0% {
-    transform: scale(0.15, 0.15);
-    top: 80%;
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.1, 1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.33, 0.33);
-    top: 60%;
-    opacity: 0;
-  }
-}
-@-webkit-keyframes loader {
-  100% {
-    opacity: 0;
-    z-index: -10;
-  }
-}
-@keyframes loader {
-  100% {
-    opacity: 0;
-    z-index: -10;
-  }
 }/*# sourceMappingURL=main.css.map */

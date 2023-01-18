@@ -14,21 +14,35 @@
 
     <body>
 
-        <div id="cooking">
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div id=area>
-                <div id="sides">
-                    <div id="pan"></div>
-                    <div id="handle"></div>
+        <div class="loading">
+
+            <div class="loading__cooking">
+                <div class="loading__cooking--circle">
+                    <div class="loading__cooking--circle-1"></div>
+                    <div class="loading__cooking--circle-2"></div>
+                    <div class="loading__cooking--circle-3"></div>
                 </div>
-                <div id="pancake">
-                    <div id="pastry"></div>
-                </div>
+                <div class="loading__cooking--square"></div>
             </div>
+
+            <div class="loading__cooking">
+                <div class="loading__cooking--circle">
+                    <div class="loading__cooking--circle-1 loading__cooking--delay1"></div>
+                    <div class="loading__cooking--circle-2 loading__cooking--delay1"></div>
+                    <div class="loading__cooking--circle-3 loading__cooking--delay1"></div>
+                </div>
+                <div class="loading__cooking--square loading__cooking--delay1"></div>
+            </div>
+
+            <div class="loading__cooking">
+                <div class="loading__cooking--circle">
+                    <div class="loading__cooking--circle-1 loading__cooking--delay2"></div>
+                    <div class="loading__cooking--circle-2 loading__cooking--delay2"></div>
+                    <div class="loading__cooking--circle-3 loading__cooking--delay2"></div>
+                </div>
+                <div class="loading__cooking--square loading__cooking--delay2"></div>
+            </div>
+
         </div>
 
         <header class="header">
@@ -46,7 +60,7 @@
                     <h2 class="nav__exploration--title">Réservez le menu qui vous convient</h2>
                     <p class="nav__exploration--desc">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
 
-                    <button type="button" class="nav__exploration--button">Explorer nos restaurants</button>
+                    <a href="#" class="nav__exploration--button">Explorer nos restaurants</a>
 
                 </div>
 

@@ -1,27 +1,23 @@
-/********************************** SIZE ICON **********************************/
-
 @mixin size-icon {
     font-size: 18px;
 }
-
-/********************************** SHADOW BOX **********************************/
 
 @mixin box-shadow {
     box-shadow: 2px 2px 20px rgb(0, 0, 0, 0.2);
 }
 
-/********************************** BUTTON LIKE **********************************/
-
 @mixin btn-like {
     font-size: 24px;
+
     &:hover {
-        &::before {
-            font-weight: 900;
-        }
         background: linear-gradient(to bottom left, $color-primary, $color-secondary);
         background-clip: text;
         -webkit-text-fill-color: transparent;
         transform: scale(1.2);
         transition: 0.2s;
+
+        &::before {
+            font-weight: 900;
+        }
     }
 }
