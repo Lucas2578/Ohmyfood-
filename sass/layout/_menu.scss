@@ -1,9 +1,24 @@
 .menu {
-    margin-top: -55px;
-    border-radius: 35px 35px 0px 0px;
-    background-color: $color-background;
-    z-index: 1;
-    position: relative;
+    @media screen and (min-width: 992px) {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 24px;
+    }
+
+    &__parent {
+        margin-top: -55px;
+        border-radius: 35px 35px 0px 0px;
+        background-color: $color-background;
+        z-index: 1;
+        position: relative;
+        @media screen and (min-width: 992px) {
+            margin-top: -524px;
+            width: 33%;
+            max-width: 700px;
+            border-radius: 0px;
+            top: 24px;
+        }
+    }
 
     &__title {
         display: flex;
@@ -55,10 +70,8 @@
             border-radius: 15px;
             cursor: pointer;
             overflow: hidden;
-            animation-name: itemAppear;
-            animation-delay: .6s;
-            animation-duration: .6s;
-            animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+            animation: itemAppear .6s;
+            animation-delay: .4s;
             animation-fill-mode: both;
 
             &-food {
@@ -137,19 +150,23 @@
     }
 
     &__delay-2 {
-        animation-delay: .7s;
+        animation-delay: .5s;
     }
 
     &__delay-3 {
-        animation-delay: .8s;
+        animation-delay: .6s;
+    }
+
+    &__delay-4 {
+        animation-delay: .7s;
     }
 }
 
 @keyframes itemAppear {
     0% {
-      transform: scale(0)
+        transform: scale(0);
     }
     100% {
-      transform: scale(1);
+        transform: scale(1);
     }
   }

@@ -2,6 +2,11 @@
     width: 100%;
     background-color: $color-background-footer;
     padding-bottom: 40px;
+    @media screen and (min-width: 992px) {
+        .container--second-page {
+            max-width: unset;
+        }
+    }
 
     &__title {
         font-family: Shrikhand;
