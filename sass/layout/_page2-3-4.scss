@@ -28,7 +28,7 @@
         font-family: Shrikhand;
     }
 
-    &__category, &__category--2 {
+    &__category {
         font-weight: lighter;
         padding-bottom: 5px;
         position: relative;
@@ -41,9 +41,6 @@
             height: 1px;
             width: 45px;
             border-bottom: $color-tertiary 3px solid;
-        }
-        &--2 {
-            margin-left: 35px;
         }
     }
 
@@ -59,7 +56,7 @@
         flex-direction: column;
         gap: 10px;
 
-        &--element {
+        &__element {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -70,22 +67,15 @@
             border-radius: 15px;
             cursor: pointer;
             overflow: hidden;
-            animation: itemAppear .6s;
-            animation-delay: .4s;
-            animation-fill-mode: both;
 
             &-food {
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
+                @include overflow-ellipsis;
             }
 
             &-desc {
                 font-size: 14px;
                 padding: 5px 0px 0px 0px;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
+                @include overflow-ellipsis;
             }
 
             &-price {
@@ -123,15 +113,6 @@
                     }
                 }
             }
-
-            &:hover &-confirm {
-                margin-right: -10.1px;
-                transition: all ease-in-out .4s;
-                &-item {
-                    transform: rotate(360deg);
-                    transition: all ease-in-out .6s;
-                }
-            }
         }
     }
 
@@ -141,32 +122,22 @@
         justify-content: center;
         padding-bottom: 40px;
 
-        &--command {
+        &__command {
             justify-content: center;
-            @include btn-explore_command;
             padding: 15px 50px 15px 50px;
-
+            border-radius: 50px;
+            color: white;
+            background: linear-gradient($color-secondary, $color-primary);
+            background-color: #686868;
+            font-size: 16px;
+            @include box-shadow;
         }
-    }
-
-    &__delay-2 {
-        animation-delay: .5s;
-    }
-
-    &__delay-3 {
-        animation-delay: .6s;
-    }
-
-    &__delay-4 {
-        animation-delay: .7s;
     }
 }
 
-@keyframes itemAppear {
-    0% {
-        transform: scale(0);
+.menu__title {
+    .restaurants__list__card-like {
+        position: unset;
+        margin-right: unset;
     }
-    100% {
-        transform: scale(1);
-    }
-  }
+}

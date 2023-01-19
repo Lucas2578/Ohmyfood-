@@ -11,7 +11,7 @@
         justify-content: center;
         width: 100%;
 
-        &--town {
+        &__town {
             margin: 0;
             text-align: center;
             font-size: 16px;
@@ -19,7 +19,7 @@
             font-weight: bolder;
         }
 
-        &--icon {
+        &__icon {
             position: relative;
             margin-right: 15px;
             @include size-icon
@@ -35,20 +35,16 @@
         background-color: $color-background;
         padding-bottom: 60px;
 
-        &--title {
+        &__title {
             margin: 0;
             padding: 45px 0px 5px 0px;
             width: 75%;
         }
 
-        &--desc {
+        &__desc {
             margin: 0;
             padding: 5px 0px 35px 0px;
             width: 75%;
-        }
-
-        &--button {
-            @include btn-explore_command;
         }
     }
 }

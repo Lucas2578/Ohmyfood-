@@ -10,7 +10,7 @@
 	animation: loader 0.05s;
 	animation-delay: 3s;
 	animation-fill-mode: both;
-	z-index: 10000;
+	z-index: 10;
     background-color: rgba(255, 255, 255, .9);
 
     &__cooking {
@@ -18,7 +18,7 @@
         flex-direction: column;
         position: relative;
 
-        &--circle {
+        &__circle {
             display: flex;
             width: 100%;
 
@@ -53,7 +53,7 @@
             }
         }
 
-        &--square {
+        &__square {
             width: 5px;
             height: 5px;
             padding: 10px;
@@ -66,11 +66,11 @@
             animation: bounce infinite 1s alternate;
         }
 
-        &--delay-1 {
+        &__delay-1 {
             animation-delay: 0.2s;
         }
         
-        &--delay-2 {
+        &__delay-2 {
             animation-delay: 0.4s;
         }
     }

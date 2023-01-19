@@ -1,0 +1,43 @@
+.menu__btn__command {
+    transition: 0.5s;
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.menu__card__element {
+    animation: itemAppear .6s;
+    animation-delay: .4s;
+    animation-fill-mode: both;
+    &:hover &-confirm {
+        margin-right: -10.1px;
+        transition: all ease-in-out .4s;
+
+        &-item {
+            transform: rotate(360deg);
+            transition: all ease-in-out .45s;
+        }
+    }
+}
+
+.menu__delay-2 {
+    animation-delay: .5s;
+}
+
+.menu__delay-3 {
+    animation-delay: .6s;
+}
+
+.menu__delay-4 {
+    animation-delay: .7s;
+}
+
+@keyframes itemAppear {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}

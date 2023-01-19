@@ -3,7 +3,7 @@
     background-color: $color-background-footer;
     padding-bottom: 40px;
     @media screen and (min-width: 992px) {
-        .container--second-page {
+        .container__second-page {
             max-width: unset;
         }
     }
@@ -20,7 +20,7 @@
         color: white;
         gap: 8px;
 
-        &--element {
+        &__element {
             display: flex;
 
             &-icon {
