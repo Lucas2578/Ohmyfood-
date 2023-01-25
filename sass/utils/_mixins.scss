@@ -6,6 +6,10 @@
     box-shadow: 2px 2px 20px rgb(0, 0, 0, 0.2);
 }
 
+@mixin box-shadow-hover {
+    box-shadow: 5px 5px 20px rgb(0, 0, 0, 0.6);
+}
+
 @mixin overflow-ellipsis {
     text-overflow: ellipsis;
     overflow: hidden;
