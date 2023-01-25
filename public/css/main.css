@@ -156,14 +156,17 @@ ul, ol {
 }
 .restaurants__list__card-like-icon {
   font-size: 24px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
+  text-align: center;
 }
 .restaurants__list__card-like-icon:hover {
   background: linear-gradient(to bottom left, #9356DC, #FF79DA);
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: 0.2s;
 }
 .restaurants__list__card-like-icon:hover::before {
