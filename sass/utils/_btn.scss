@@ -19,6 +19,9 @@
             transition: 0.2s;
     
             &::before {
+                -webkit-text-fill-color: transparent;
+                background: linear-gradient(to bottom left, $color-primary, $color-secondary);
+                background-clip: text;
                 font-weight: 900;
             }
         }

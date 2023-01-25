@@ -167,6 +167,10 @@ ul, ol {
   transition: 0.2s;
 }
 .restaurants__list__card-like-icon:hover::before {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(to bottom left, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
   font-weight: 900;
 }
 
@@ -407,10 +411,6 @@ ul, ol {
   }
 }
 
-.fas.fa-mobile-screen-button, .fas.fa-list-ul, .fas.fa-store {
-  display: flex;
-}
-
 .restaurants {
   background-color: #F7F7F7;
   padding: 60px 0px 65px 0px;
@@ -468,47 +468,12 @@ ul, ol {
   }
 }
 
-.menu__title .restaurants__list__card-like {
-  position: unset;
-  margin-right: unset;
-}
-
 .restaurants__list__card a {
   width: 100%;
 }
 
-.footer {
-  width: 100%;
-  background-color: #353535;
-  padding-bottom: 40px;
-}
-@media screen and (min-width: 992px) {
-  .footer .container__second-page {
-    max-width: unset;
-  }
-}
-.footer__title {
-  font-family: Shrikhand;
-  color: white;
-  padding: 25px 0px 25px 0px;
-}
-.footer__list {
+.fas.fa-mobile-screen-button, .fas.fa-list-ul, .fas.fa-store {
   display: flex;
-  flex-direction: column;
-  color: white;
-  gap: 8px;
-}
-.footer__list__element {
-  display: flex;
-}
-.footer__list__element-icon {
-  width: 16px;
-  height: 16px;
-  font-size: 16px;
-  padding-right: 14px;
-}
-.footer__list__element-link {
-  width: auto;
 }
 
 @media screen and (min-width: 992px) {
@@ -637,6 +602,45 @@ ul, ol {
   background-color: #686868;
   font-size: 16px;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.menu__title .restaurants__list__card-like {
+  position: unset;
+  margin-right: unset;
+}
+
+.footer {
+  width: 100%;
+  background-color: #353535;
+  padding-bottom: 40px;
+}
+@media screen and (min-width: 992px) {
+  .footer .container__second-page {
+    max-width: unset;
+  }
+}
+.footer__title {
+  font-family: Shrikhand;
+  color: white;
+  padding: 25px 0px 25px 0px;
+}
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 8px;
+}
+.footer__list__element {
+  display: flex;
+}
+.footer__list__element-icon {
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  padding-right: 14px;
+}
+.footer__list__element-link {
+  width: auto;
 }
 
 .menu__btn__command {
